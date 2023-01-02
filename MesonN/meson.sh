@@ -44,7 +44,7 @@ function setupVars {
 
 function setupSwap {
 	echo -e '\n\e[42mSet up swapfile\e[0m\n'
-	curl -s https://raw.githubusercontent.com/tubianca/testnets/main/mesonn/swap4.sh | bash
+	curl -s https://raw.githubusercontent.com/tubianca/Testnets/main/MesonN/swap4.sh | bash
 }
 
 function installDeps {
