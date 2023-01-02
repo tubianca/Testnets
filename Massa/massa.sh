@@ -9,9 +9,13 @@ echo "    | |  | |__| | |_) || |_ / ____ \| |\  | |____ / ____ \   ";
 echo "    |_|   \____/|____/_____/_/    \_\_| \_|\_____/_/    \_\  ";
 echo -e "\e[0m"
                                                           
+<<<<<<< HEAD
 
 sleep3
 
+=======
+sleep 3
+>>>>>>> c2d37db162badae606fc91823a74b0353c1fd781
 
 bold=$(tput bold)
 underline=$(tput smul)
