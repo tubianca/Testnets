@@ -25,7 +25,7 @@ warn=$(tput setaf 214)
 reset=$(tput sgr0)
 
 clear;
-echo "Tubi - Massa Node Installation"
+echo "Massa Node Installation"
 sleep 3
 
 # server update and port settings
