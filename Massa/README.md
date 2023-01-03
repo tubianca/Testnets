@@ -13,7 +13,7 @@ Massa is a truly decentralized blockchain controlled by thousands of people. Wit
 
 | CPU | RAM     | GB                |
 | :-------- | :------- | :------------------------- |
-| `4` | `8` | 60 |
+| `4` | `8` | `60` |
 
 
 Not:Right now 4 cores and 8 GB of RAM should be enough to run a node, but it might increase in the future. More info in the FAQ.
