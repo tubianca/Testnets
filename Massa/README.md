@@ -12,19 +12,63 @@ Massa is a truly decentralized blockchain controlled by thousands of people. Wit
 
 | CPU | RAM     | GB                |
 | :-------- | :------- | :------------------------- |
-| `4` | `8` | `60` |
+| `4` | `8` | 60 |
 
 
-Not:Right now 4 cores and 8 GB of RAM should be enough to run a node, but it might increase in the future.
+Not:Right now 4 cores and 8 GB of RAM should be enough to run a node, but it might increase in the future. More info in the FAQ.
 
 
 ## Install
 
 Use script for a quick installation:
 ```bash
-wget https://raw.githubusercontent.com/tubianca/Testnets/main/Massa/massascript.sh  && chmod 777 massascript.sh && sudo ./massascript.sh
+  wget https://raw.githubusercontent.com/tubianca/Testnets/main/Massa/massascript.sh  && chmod 777 massascript.sh && sudo ./massascript.sh
 ```
 
+
+## Post installation
+
+To check your node logs
+
+```bash
+screen -r massa-node
+```
+
+To check your client command page
+```bash
+screen -r massa-client
+```
+
+## Creat wallet and save discord bot
+
+Open your client
+```bash
+screen -r massa-client
+```
+
+Create new wallet 
+```bash
+wallet_generate_secret_key
+```
+Check your wallet details
+(copy your adress and paste to testnet-faucet channel on Massa discord)
+```bash
+wallet_info
+```
+Buy rols (make sure you are on client screen to paste code )
+```bash
+buy_rolls <addres> 1 0
+```
+Save your secret key for staking 
+```bash
+node_add_staking_secret_keys <secretKey>
+```
+Go the Massa discord server and click 👍 in the testnet-rewards-registration channel.
+```bash
+node_testnet_rewards_program_ownership_proof <your_staking_address> <discordId>
+```
+Copy the terminal output and send it to the discord bot.
+then send the ip address of your server as well.
 
 ## Documentation
 
