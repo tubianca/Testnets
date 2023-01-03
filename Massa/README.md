@@ -1,6 +1,6 @@
 ![Logo](https://static.wixstatic.com/media/0669d3_7e53eea984a047ba86659e34452e24ff~mv2.png/v1/fill/w_198,h_198,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/3F42F1E3-8627-4BE5-A95E-6411E306BFCF_PNG.png)
 
-#Massa Labs 
+# Massa Labs 
 
 Massa is a truly decentralized blockchain controlled by thousands of people. With the breakthrough multithreaded technology, we’re set for mass adoption.
 
