@@ -23,7 +23,7 @@ Not:Right now 4 cores and 8 GB of RAM should be enough to run a node, but it mig
 
 Use script for a quick installation:
 ```bash
-  wget https://raw.githubusercontent.com/tubianca/Testnets/main/Massa/massascript.sh  && chmod 777 massascript.sh && sudo ./massascript.sh
+  wget https://raw.githubusercontent.com/tubianca/Testnets/main/Massa/massascript.sh  && chmod +x massascript.sh && sudo ./massascript.sh
 ```
 
 
