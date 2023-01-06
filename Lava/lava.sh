@@ -20,14 +20,12 @@ read -p "Enter node name: " NODENAME
 echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 
-echo -e "\033[0;35m Packages installations "\e[0m" && sleep 1
 
 sudo apt update 
 sudo apt install -y unzip logrotate git jq sed wget curl coreutils systemd
 temp_folder=$(mktemp -d) && cd $temp_folder
 
 # Configurations
-echo -e "\033[0;35m Configurations "\e[0m" && sleep 1
 go_package_url="https://go.dev/dl/go1.18.linux-amd64.tar.gz"
 go_package_file_name=${go_package_url##*\/}
 wget -q $go_package_url
@@ -38,7 +36,6 @@ source ~/.profile
 cd
 
 ### Download Lava
-echo -e "\033[0;35m Download Lava "\e[0m" && sleep 1
 git clone https://github.com/K433QLtr6RA9ExEq/GHFkqmTzpdNLDd6T.git
 cd GHFkqmTzpdNLDd6T/testnet-1
 source setup_config/setup_config.sh
@@ -49,7 +46,6 @@ cp default_lavad_config_files/* $lava_config_folder
 cp genesis_json/genesis.json $lava_config_folder/genesis.json
 
 ### Download Lava
-echo -e "\033[0;35m Set up Cosmovisor "\e[0m" && sleep 1
 go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
 mkdir -p $lavad_home_folder/cosmovisor
 wget https://lava-binary-upgrades.s3.amazonaws.com/testnet/cosmovisor-upgrades/cosmovisor-upgrades.zip
@@ -57,7 +53,6 @@ unzip cosmovisor-upgrades.zip
 cp -r cosmovisor-upgrades/* $lavad_home_folder/cosmovisor
 
 # Set the environment variables
-echo -e "\033[0;35m Set the environment variables "\e[0m" && sleep 1
 echo "# Setup Cosmovisor" >> ~/.profile
 echo "export DAEMON_NAME=lavad" >> ~/.profile
 echo "export CHAIN_ID=lava-testnet-1" >> ~/.profile
@@ -70,7 +65,6 @@ source ~/.profile
 
 
 # Initialize the chain
-echo -e "\033[0;35m Initialize the chains "\e[0m" && sleep 1
 $lavad_home_folder/cosmovisor/genesis/bin/lavad init \
 $NODENAME \
 --chain-id lava-testnet-1 \
@@ -80,7 +74,6 @@ cp genesis_json/genesis.json $lava_config_folder/genesis.json
 
 
 # Create Cosmovisor unit file
-echo -e "\033[0;35m Create Cosmovisor unit file "\e[0m" && sleep 1
 echo "[Unit]
 Description=Cosmovisor daemon
 After=network-online.target
@@ -105,7 +98,7 @@ sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
 
 
 # Enable the cosmovisor service so that it will start automatically when the system boots
-echo -e "\033[0;35m Enable the cosmovisor "\e[0m" && sleep 1
+
 sudo systemctl daemon-reload
 sudo systemctl enable cosmovisor.service
 sudo systemctl restart systemd-journald
@@ -113,7 +106,6 @@ sudo systemctl start cosmovisor
 
 
 # Prepare an account
-echo -e "\033[0;35m Prepare an account "\e[0m" && sleep 1
 current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
 ACCOUNT_NAME=wallet
 $current_lavad_binary keys add $ACCOUNT_NAME
