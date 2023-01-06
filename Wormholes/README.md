@@ -31,7 +31,7 @@ wget -O wormholes.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Wo
 ```
 Monitor Node
 ```bash
-wget -O monitor.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Wormholes/monitor.sh && chmod +x montior.sh && ./monitor.sh
+wget -O monitor.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Wormholes/monitor.sh && chmod +x monitor.sh && ./monitor.sh
 ```
 
 ## Prepare your account
