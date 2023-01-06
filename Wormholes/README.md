@@ -29,6 +29,7 @@ Use script for a quick installation:
 ```bash
 wget -O wormholes.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Wormholes/wormholes.sh && chmod +x wormholes.sh && ./wormholes.sh
 ```
+
 Monitor Node
 ```bash
 wget -O monitor.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Wormholes/monitor.sh && chmod +x montior.sh && ./monitor.sh
