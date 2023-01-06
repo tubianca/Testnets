@@ -21,6 +21,7 @@ echo 'export NODENAME='$NODENAME >> $HOME/.bash_profile
 fi
 
 echo -e "\033[0;35m Packages installations "\e[0m" && sleep 1
+
 sudo apt update 
 sudo apt install -y unzip logrotate git jq sed wget curl coreutils systemd
 temp_folder=$(mktemp -d) && cd $temp_folder
