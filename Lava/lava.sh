@@ -98,7 +98,8 @@ sudo systemctl start cosmovisor
 }
 
 function check_logs {
-
+echo "checking logs..."
+sleep 2
 sudo journalctl -u cosmovisor -f
 
 }
@@ -110,7 +111,9 @@ function create_wallet {
     current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
     WALLET="WALLET"
     $current_lavad_binary keys add $WALLET
-
+if [ ! $WALLET ]; then
+	echo "export WALLET=wallet" >> $HOME/.bash_profile
+fi
     
     sleep 3
     echo "DANGER!!!Ensure you write down the mnemonic as you can not recover the wallet without it."
@@ -119,8 +122,8 @@ function create_wallet {
 }
 
 function create_validator {
-    current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
-    current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
+    echo "Creating your validator.."
+    sleep 2
 
 $current_lavad_binary tx staking create-validator \
     --amount="100000ulava" \
@@ -132,7 +135,9 @@ $current_lavad_binary tx staking create-validator \
     --commission-max-change-rate="0.01" \
     --min-self-delegation="1" \
     --gas="auto" \
-    --from=$WALLET -y
+    --from=$WALLET 
+
+
 
 }
 
