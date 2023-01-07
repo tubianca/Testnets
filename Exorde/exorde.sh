@@ -9,18 +9,11 @@ echo  "
    ██║   ╚██████╔╝██████╔╝██║██║  ██║██║ ╚████║╚██████╗██║  ██║
    ╚═╝    ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝
  "
-sleep 3
-
-if [ ! $ADRESS ]; then
-	read -p "Paste Your Metamask Adress: " ADRESS
-	echo 'export METAMASKWALLET='$ADRESS >> $HOME/.bash_profile
-fi
 
 
-source $HOME/.bash_profile
                                                                                     
                                                                                         
-
+sleep 3
 
 # Install packages download git
 apt update
@@ -34,8 +27,6 @@ curl -f -s -S -L https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+sudo systemctl status docker
 
-screen -S exorde
 
-
-docker run -d --restart unless-stopped --pull always --name exorde-cli exordelabs/exorde-cli -m $ADRESS -l 2
