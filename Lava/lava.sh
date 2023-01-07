@@ -58,14 +58,6 @@ echo "export DAEMON_RESTART_AFTER_UPGRADE=true" >> ~/.profile
 echo "export UNSAFE_SKIP_BACKUP=true" >> ~/.profile
 source ~/.profile
 
-echo "Initialize the chain..."
-$lavad_home_folder/cosmovisor/genesis/bin/lavad init \
-$MONIKER \
---chain-id lava-testnet-1 \
---home $lavad_home_folder \
---overwrite
-cp genesis_json/genesis.json $lava_config_folder/genesis.json
-
 # Create Cosmovisor unit file
 echo "[Unit]
 Description=Cosmovisor daemon
@@ -87,6 +79,16 @@ LimitNPROC=infinity
 WantedBy=multi-user.target
 " >cosmovisor.service
 sudo mv cosmovisor.service /lib/systemd/system/cosmovisor.service
+
+
+echo "Initialize the chain..."
+$lavad_home_folder/cosmovisor/genesis/bin/lavad init \
+$MONIKER \
+--chain-id lava-testnet-1 \
+--home $lavad_home_folder \
+--overwrite
+cp genesis_json/genesis.json $lava_config_folder/genesis.json
+
 
 
   
