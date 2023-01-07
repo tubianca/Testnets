@@ -50,6 +50,6 @@ wget -O monitor.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Worm
 
 [Official Guide](https://www.wormholes.com/docs/install/run/index.html#the-approach)
 
-[Aleo Website](https://www.wormholes.com/)
+[Wormholes Website](https://www.wormholes.com/)
 
 
