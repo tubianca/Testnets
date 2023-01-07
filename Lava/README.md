@@ -1,4 +1,4 @@
-[Logo](https://static.wixstatic.com/media/0669d3_b779bab9120940ca8368bda3fd2e7ba9~mv2.png/v1/fill/w_474,h_474,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/lavaa_PNG.png)
+![Logo](https://static.wixstatic.com/media/0669d3_b779bab9120940ca8368bda3fd2e7ba9~mv2.png/v1/fill/w_474,h_474,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/lavaa_PNG.png)
 # Lava Testnet Guide 
 
 Lava pairs Providers with Applications for scalable, private and uncensored access to Web3.
