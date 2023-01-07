@@ -25,10 +25,16 @@ Not:You will require more than these requirement in order to be competitive
 
 ## Install
 
-Use script for a quick installation:
+Use script for a quick installation(end of the installation you will see that your docker ACTIVE. kindly press CTRL+C and follow the commands bellow)
 ```bash
 wget -O exorde.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Exorde/exorde.sh && chmod +x exorde.sh && ./exorde.sh
 ```
+
+Open Screen
+```bash
+screen -S exorde
+```
+
 Change <YOUR_MAIN_ETH_ADDRESS> with your main Ethereum (ETH) Mainnet address.
 ```bash
 docker run -d --restart unless-stopped --pull always --name exorde-cli exordelabs/exorde-cli -m <YOUR_MAIN_ETH_ADDRESS> -l 2
@@ -51,6 +57,21 @@ Check Logs
 ```bash
 docker logs --follow  exorde-cli
 ```
+
+## Update to Newest Version
+Stop docker
+```bash
+docker stop exorde-cli
+```
+Delete docker
+```bash
+docker rm exorde-cli
+```
+Pull newest version and start
+```bash
+docker run -d --restart unless-stopped --pull always --name exorde-cli exordelabs/exorde-cli -m <YOUR_MAIN_ETH_ADDRESS> -l 2
+```
+
 ## Documentation
 
 [Official Guide](https://docs.exorde.network/)
