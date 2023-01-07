@@ -60,7 +60,7 @@ source ~/.profile
 
 echo "Initialize the chain..."
 $lavad_home_folder/cosmovisor/genesis/bin/lavad init \
-$NODENAME \
+$MONIKER \
 --chain-id lava-testnet-1 \
 --home $lavad_home_folder \
 --overwrite
