@@ -89,7 +89,10 @@ $MONIKER \
 --overwrite
 cp genesis_json/genesis.json $lava_config_folder/genesis.json
 
-
+sudo systemctl daemon-reload
+sudo systemctl enable cosmovisor.service
+sudo systemctl restart systemd-journald
+sudo systemctl start cosmovisor
 
   
 }
