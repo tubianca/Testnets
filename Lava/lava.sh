@@ -119,6 +119,8 @@ function create_wallet {
 }
 
 function create_validator {
+    current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
+
 $current_lavad_binary tx staking create-validator \
     --amount="100000ulava" \
     --pubkey=$($current_lavad_binary tendermint show-validator --home "$HOME/.lava/") \
