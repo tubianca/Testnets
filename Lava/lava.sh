@@ -128,9 +128,16 @@ fi
 function create_validator {
     echo "Creating your validator.."
     sleep 2
-current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
 
-$current_lavad_binary tx staking create-validator \
+if [ ! $WALLET ]; then
+	echo "export WALLET=WALLET" >> $HOME/.bash_profile
+fi
+ 
+    current_lavad_binary="$HOME/.lava/cosmovisor/current/bin/lavad"
+    WALLET=WALLET
+    YOUR_ADDRESS=$($current_lavad_binary keys show -a $WALLET)
+
+ $current_lavad_binary tx staking create-validator \
     --amount="100000ulava" \
     --pubkey=$($current_lavad_binary tendermint show-validator --home "$HOME/.lava/") \
     --moniker=$MONIKER  \
