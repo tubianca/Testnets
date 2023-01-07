@@ -30,23 +30,23 @@ wget -O lava.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Lava/la
 
 ## Directions
 
-** STEP 1:** Use script and choice "🛠 Install Lava Node" option to start
+**STEP 1:**  Use script and choice "🛠 Install Lava Node" option to start
 
-** STEP 2:** Use script to check the logs by choice  "👀 Check Logs" option 
+**STEP 2:**  Use script to check the logs by choice  "👀 Check Logs" option 
 
-** STEP 3:** Use script Choice "🔑 Create wallet" option to creat your Lava wallet
+**STEP 3:**  Use script Choice "🔑 Create wallet" option to creat your Lava wallet
 (make sure you take note of Mnemonic after you create the wallet, because without it you can't recover the wallet.)
 
-** STEP 4:** Go to [Faucet](https://discord.com/channels/963778337904427018/1059851367717556314) and get test tokens to creat validator ($request YOURLAVAWALLETADRESS )
+**STEP 4:**  Go to [Faucet](https://discord.com/channels/963778337904427018/1059851367717556314) and get test tokens to creat validator ($request YOURLAVAWALLETADRESS )
 
-** STEP 5:** Next you have to make sure your validator is syncing blocks. You can use command below to check synchronization status
+**STEP 5:**  Next you have to make sure your validator is syncing blocks. You can use command below to check synchronization status
 (wait for catching_up": False)
 
 
 ```bash
 $HOME/.lava/cosmovisor/current/bin/lavad status | jq
 ```
-** STEP 6:**  Use script and choice "💎 Be validator" option.
+**STEP 6:**   Use script and choice "💎 Be validator" option.
 
 That's all. Your node is ready for Lava.  Don't forget to backup your CONFIG file.
 
