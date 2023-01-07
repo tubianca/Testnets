@@ -1,3 +1,5 @@
+#!/bin/bash
+
 WILL BE UPDATE.. DONT USE THIS SCRIPT
 echo  "
 
