@@ -76,6 +76,6 @@ docker run -d --restart unless-stopped --pull always --name exorde-cli exordelab
 
 [Official Guide](https://docs.exorde.network/)
 
-[Aleo Website](https://exorde.network/)
+[Exorde Website](https://exorde.network/)
 
 
