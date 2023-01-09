@@ -118,7 +118,7 @@ fi
 
     $current_lavad_binary keys add $WALLET
 
-    
+
     sleep 3
     echo "DANGER!!!Ensure you write down the mnemonic as you can not recover the wallet without it."
 
