@@ -1,5 +1,5 @@
 
-![Logo](https://pbs.twimg.com/profile_images/1413009918408331269/mtEQXplO_400x400.jpg)
+![Logo](https://global-uploads.webflow.com/620b86dd36c9285a4b3048fa/6216af2dd100a155f79b5148_minima_logo.svg)
 # Minima Testnet Guide 
 
 Minima IncentiveCash Program that rewards users for running and maintaining a complete node on the Minima network.
