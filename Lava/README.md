@@ -15,7 +15,7 @@ Lava Network, a trustless market for blockchain Remote Procedure Calls (RPC). La
 |   `4` | `8` | `100` |
 
 
-Not:Note: You may need more than these requirements to be competitive
+Note: You may need more than these requirements to be competitive
 
 
 
