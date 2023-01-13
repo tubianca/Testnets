@@ -5,17 +5,6 @@ LIGHT_GREEN="\e[92m"
 YELLOW="\e[33m"
 DEFAULT="\e[39m"
 
-function install_node {
-
-echo -e "\e[1m\e[32m	What is your incentivecash uid:\e[0m"
-   read incentivecash_uid
-   echo export incentivecash_uid=${incentivecash_uid} >> $HOME/.bash_profile
-   source ~/.bash_profile
-
-echo -e "\e[1m\e[32m	Create your Password:\e[0m"
-   read minima_mdspassword
-   echo export minima_mdspassword=${minima_mdspassword} >> $HOME/.bash_profile
-   source ~/.bash_profile
 
     echo "Installing Depencies..."
     sudo apt update 
@@ -25,44 +14,15 @@ sudo usermod -aG sudo minima
 sudo curl -fsSL https://get.docker.com/ -o get-docker.sh
 sudo chmod +x ./get-docker.sh && ./get-docker.sh
 sudo usermod -aG docker $USER
-docker run -d -e minima_mdspassword=$minima_mdspassword -e minima_server=true -v ~/minimadocker9001:/home/minima/data -p 9001-9004:9001-9004 --restart unless-stopped --name minima9001 minimaglobal/minima:latest
-sudo systemctl enable docker.service
-sudo systemctl enable containerd.service
-docker run -d --restart unless-stopped --name watchtower -e WATCHTOWER_CLEANUP=true -e WATCHTOWER_TIMEOUT=60s -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower
-docker exec -it minima9001 minima
-sleep 3
-incentivecash uid:$incentivecash_uid
 
-
-}
-
-function get_mnemonic {
-echo "Back-up Mnemonics"
-    echo "DANGER!!!Ensure you write down the mnemonic as you can not recover the wallet without it."
-
-sleep 2
-
-docker exec -it minima9001 minima
-sleep 3
-vault
-
-}
-
-
-function check_status {
-    echo "Checking node status.."
-    sleep 2
-    docker exec -it minima9001 minima
-sleep 3
-status
-
-}
 
 
 function remove_minima {
     echo "Removing Minima.."
     sleep 2
 
+docker stop minima9001
+docker rm minima9001
 sudo wget -O minima_remove.sh https://raw.githubusercontent.com/minima-global/Minima/master/scripts/minima_remove.sh && sudo chmod +x minima_remove.sh && sudo ./minima_remove.sh -p 9001 -x
 sudo rm -r /home/minima/
 sudo userdel minima
@@ -162,9 +122,7 @@ function main {
 
     options=(
         "🛠 Install Minima Node"
-        "👀 Check Status"
         "🔍 Check Logs"
-        "🔑 Back-up Mnemonic"
         "♻️ Restart"
         "🗑 Delete Minima"
         "🚨 Exit"
@@ -179,20 +137,14 @@ function main {
             install_node
             ;;
         1)
-            check_status
+            check_logs
             ;;
         2)
-            check_logs
+            restart_node
             ;;    
         3)
-            get_mnemonic
-            ;;  
-        4)
-            restart_node
-            ;;            
-        5)
             remove_minima
-            ;;
+            ;;  
         6)
             exit 0
          
