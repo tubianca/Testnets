@@ -36,7 +36,7 @@ incentivecash uid:$incentivecash_uid
 
 }
 
-function mnemonic {
+function get_mnemonic {
 echo "Back-up Mnemonics"
     echo "DANGER!!!Ensure you write down the mnemonic as you can not recover the wallet without it."
 
@@ -49,7 +49,7 @@ vault
 }
 
 
-function status {
+function check_status {
     echo "Checking node status.."
     sleep 2
     docker exec -it minima9001 minima
@@ -69,6 +69,22 @@ sudo userdel minima
 
 }
 
+function restart_node {
+    echo "Restarting Minima.."
+    sleep 2
+
+docker restart minima9001
+
+}
+
+
+function check_logs {
+    echo "Cheking Logs.."
+    sleep 2
+
+docker logs --follow minima9001
+
+}
 
 
 
@@ -147,7 +163,9 @@ function main {
     options=(
         "🛠 Install Minima Node"
         "👀 Check Status"
+        "🔍 Check Logs"
         "🔑 Back-up Mnemonic"
+        "♻️ Restart"
         "🗑 Delete Minima"
         "🚨 Exit"
     )
@@ -161,15 +179,21 @@ function main {
             install_node
             ;;
         1)
-            mnemonic
+            check_status
             ;;
         2)
-            status
+            check_logs
             ;;    
         3)
+            get_mnemonic
+            ;;  
+        4)
+            restart_node
+            ;;            
+        5)
             remove_minima
             ;;
-        4)
+        6)
             exit 0
          
             ;;
