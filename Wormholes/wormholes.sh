@@ -17,8 +17,14 @@ echo  "
                                                                                         
 sleep 3
 
+sudo apt update && apt upgrade -y
+sudo apt install docker.io -y
+sudo systemctl enable --now docker
+
+
 
 #check docker cmd
+
 
 which docker >/dev/null 2>&1
 if  [ $? -ne 0 ] ; then
