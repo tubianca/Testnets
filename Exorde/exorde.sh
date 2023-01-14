@@ -18,7 +18,7 @@ sleep 3
 # Install packages download git
 apt update
 apt install git -y
-apt install apt-transport-https ca-certificates software-properties-common curl
+apt install apt-transport-https ca-certificates software-properties-common curl -y
 
 
 # Install the dock, start it and check it
