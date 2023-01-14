@@ -27,28 +27,59 @@ Not:Note: You may need more than these requirements to be competitive
 
 
 
+
 ## Install
 
-The only code you need for the installation is the script created below. Copy the code below and perform the steps in the direction section.
+Use script and choice "🛠 Install Minima Node" option to start
 ```bash
 wget -O minima.sh https://raw.githubusercontent.com/tubianca/Testnets/main/Minima/minima.sh && chmod +x minima.sh && ./minima.sh
 ```
 
-## Directions
+You have to set your password and insert it with ‘YOURPASSWORD’ in the command below
+```bash
+docker run -d -e minima_mdspassword=YOURPASSWORD -e minima_server=true -v ~/minimadocker9001:/home/minima/data -p 9001-9004:9001-9004 --restart unless-stopped --name minima9001 minimaglobal/minima:latest
+```
 
-✅​STEP 1-Use script and choice __"🛠 Install Minima Node"__ option to start
+Ensure Docker starts up automatically when the server starts
+```bash
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+```
 
-✅STEP 2-Use script to check the status by choice  __"👀 Check Status"__ option 
+Start a Watchtower container to automatically update Minima when a new version is available.
+```bash
+docker run -d --restart unless-stopped --name watchtower -e WATCHTOWER_CLEANUP=true -e WATCHTOWER_TIMEOUT=60s -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower
+```
+## Start the Minima Terminal by running the command
 
-✅STEP 3-Use script to check the logs by choice __"🔍 Check Logs"__ option
+```bash
+docker exec -it minima9001 minima
+```
+Register with your incentive cash uid  (replace your incetivecash uid with xxxx-xxxx-xxxx-xxxx
 
-✅STEP 4-Use script Choice __"🔑 Back-up Mnemonic"__ option to back up your Minima wallet
-(make sure you take note of Mnemonic after you create the wallet, because without it you can't recover the wallet.)
+```bash
+incentivecash uid:xxxx-xxxxx-xxxx-xxx
+```
+
+Check your node status
+
+```bash
+status
+```
+
+Back up your Mnemonic
+
+```bash
+vault
+```
+How to check your MiniDapp System password
+
+```bash
+mds
+```
 
 
-✅STEP 5-Use script to restart the minima by choice __"♻️ Restart"__ option
 
-✅STEP 6-If you want to delete the minima node Choice __"🗑 Delete Minima"__
 
 
 
