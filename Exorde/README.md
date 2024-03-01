@@ -13,7 +13,6 @@ All contributors can earn reputation and EXD, the cryptocurrency of the Exorde p
 
 
 
-
 | CPU | RAM     | GB                |
 | :-------- | :------- | :------------------------- |
 |   `2` | `4` | `1` |
