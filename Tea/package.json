@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "main": "lib/index.js",
     "description": "convert the referenced directory to all files under the reference directory",
-    "repository": "https://github.com/tubianca/testnets/tea",
+    "repository": "https://github.com/tubianca/Testnets/tree/main/Tea",
     "license": "MIT",
     "keywords": [
           "tea",
