@@ -1,0 +1,14 @@
+{
+    "name": "tea",
+    "version": "0.0.1",
+    "main": "lib/index.js",
+    "description": "convert the referenced directory to all files under the reference directory",
+    "repository": "https://github.com/tubianca/testnets/tea",
+    "license": "MIT",
+    "keywords": [
+          "tea",
+          "requireAll",
+          "require dirs all files"
+     ]
+
+}
